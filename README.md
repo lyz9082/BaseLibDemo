@@ -36,6 +36,6 @@ XImageLoader.getInstance().showImage(XImageLoader.getDefaultOptions(imageView, i
         });
 
 
-
+//通过各个子module中的makeJar生成不同依赖的jar包
 
 

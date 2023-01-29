@@ -1,2 +1,5 @@
+include ':frescoImage'
+include ':glideImage'
+include ':image'
 include ':app'
 include ':baseLib'
