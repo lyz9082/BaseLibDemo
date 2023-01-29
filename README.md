@@ -36,6 +36,6 @@ XImageLoader.getInstance().showImage(XImageLoader.getDefaultOptions(imageView, i
         });
 
 
-//通过各个子module中的makeJar生成不同依赖的jar包
+//通过各个子module中的makeJar生成不同依赖的jar包,也可统一生成一个jar（后期不通jar可以根据需要动态打包，减少包体积）
 
 

@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "33.0.1"
+    lintOptions {
+        abortOnError false;
+    }
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation project(path: ':baseLib')
+
+    //fresco
+    implementation "com.facebook.fresco:fresco:0.14.1"
+    implementation "com.facebook.fresco:webpsupport:0.14.1"
+    implementation "com.facebook.fresco:animated-webp:0.14.1"
+    implementation "com.facebook.fresco:animated-gif:0.14.1"
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.7.1"
+
+    //网络框架，目前就列举这3种常用的
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+}
+
+task makeJar(type: Copy) {
+    //删除存在的
+    delete 'build/libs/baseExpand.jar'
+    //设置拷贝的文件
+    from('build/intermediates/packaged-classes/release/')
+    //打进jar包后的文件目录
+    into('build/customlibs/')
+    //将classes.jar放入build/libs/目录下
+    //include ,exclude参数来设置过滤
+    include('classes.jar')
+    //重命名
+    rename('classes.jar', 'baseExpand.jar')
+}
+
+makeJar.dependsOn(build)

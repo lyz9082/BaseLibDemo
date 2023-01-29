@@ -3,18 +3,19 @@ package com.mgtv.demo;
 import android.app.Application;
 import com.mgtv.baseLib.global.entrance.XBuildConfig;
 import com.mgtv.baseLib.global.entrance.XInitManager;
-import com.mgtv.demo.httpimpl.impl.OKHttpEngine;
-import com.mgtv.glideimage.GlideImageLoader;
+import com.mgtv.http.OKHttpEngine;
+import com.mgtv.image.glideimage.GlideImageLoader;
 
 
 public class MainApplication extends Application {
-    public  static Application application;
+    public static Application application;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        application=this;
+        application = this;
         XBuildConfig xBuildConfig = new XBuildConfig.Builder()
-                .setHttpEngine(new OKHttpEngine())
+                .setHttpEngine(new OKHttpEngine(application.getCacheDir()))
                 .setImageLoaderStrategy(new GlideImageLoader())
                 .openLog(true).build();
         XInitManager.init(this, xBuildConfig);
