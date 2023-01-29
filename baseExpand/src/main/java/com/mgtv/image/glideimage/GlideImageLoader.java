@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -27,6 +28,7 @@ import com.mgtv.baseLib.image.base.ImageLoaderOptions;
 import java.util.ArrayList;
 import java.util.List;
 
+@Keep
 public class GlideImageLoader implements IImageLoaderStrategy {
     private Handler mainHandler = new Handler();
 

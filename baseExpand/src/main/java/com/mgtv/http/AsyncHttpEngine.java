@@ -1,5 +1,7 @@
 package com.mgtv.http;
 
+import androidx.annotation.Keep;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -15,6 +17,7 @@ import cz.msebera.android.httpclient.Header;
 /**
  * AsyncHttp简单实现，你可修改，这只是案例
  */
+@Keep
 public class AsyncHttpEngine implements IHttpEngine {
     private AsyncHttpClient client;
 

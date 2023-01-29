@@ -9,6 +9,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
@@ -39,7 +41,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 /**
  * Created by ${wuzhao} on 2017/10/18 0018.
  */
-
+@Keep
 public class FrescoImageLoader implements IImageLoaderStrategy {
     @Override
     public void init(Context appContext, ImageLoaderConfig config) {

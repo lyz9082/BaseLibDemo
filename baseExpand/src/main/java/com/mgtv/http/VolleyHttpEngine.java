@@ -3,6 +3,8 @@ package com.mgtv.http;
 
 import android.content.Context;
 
+import androidx.annotation.Keep;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
@@ -24,6 +26,7 @@ import java.util.Map;
 /**
  * Volley简单实现，你可修改，这只是案例
  */
+@Keep
 public class VolleyHttpEngine implements IHttpEngine {
 
     private static RequestQueue mQueue = null;
