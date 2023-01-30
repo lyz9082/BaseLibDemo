@@ -2,6 +2,7 @@ package com.mgtv.http;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Keep;
 
@@ -14,10 +15,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.mgtv.baseLib.http.base.HttpCallBack;
-import com.mgtv.baseLib.http.base.IHttpEngine;
-import com.mgtv.baseLib.http.base.XHttp;
-import com.mgtv.baseLib.http.base.XHttpConfig;
+import com.mgtv.baseLib.https.base.HttpCallBack;
+import com.mgtv.baseLib.https.base.IHttpEngine;
+import com.mgtv.baseLib.https.base.XHttp;
+import com.mgtv.baseLib.https.base.XHttpConfig;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -33,6 +34,7 @@ public class VolleyHttpEngine implements IHttpEngine {
     private static RequestQueue mQueue = null;
 
     public VolleyHttpEngine(Context context) {
+        Log.i("init","VolleyHttpEngine");
         mQueue = Volley.newRequestQueue(context);
     }
 

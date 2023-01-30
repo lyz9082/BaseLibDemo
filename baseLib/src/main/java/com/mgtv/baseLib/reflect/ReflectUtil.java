@@ -1,6 +1,10 @@
 package com.mgtv.baseLib.reflect;
 
+import android.content.Context;
 import android.text.TextUtils;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author 龙奕志
@@ -9,7 +13,7 @@ import android.text.TextUtils;
  */
 public class ReflectUtil {
 
-    public static <T> T obtainObject(String className) {
+    public static Object obtainObject(Context context,String className) {
         if (!TextUtils.isEmpty(className)) {
             Class cl = null;
             try {
@@ -18,12 +22,22 @@ public class ReflectUtil {
                 e.printStackTrace();
             }
             try {
-                T obj = (T) cl.newInstance();
+                Constructor constructor = cl.getConstructor(Context.class);
+                Object obj = null;
+                try {
+                    obj = constructor.newInstance(context);
+                } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
                 return obj;
-            } catch (IllegalAccessException | InstantiationException e) {
+            } catch (NoSuchMethodException e) {
                 e.printStackTrace();
             }
         }
         return null;
+    }
+
+    public static void obtainObject() {
+
     }
 }

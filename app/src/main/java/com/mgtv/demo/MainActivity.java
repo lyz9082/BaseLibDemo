@@ -8,9 +8,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mgtv.baseLib.klog.XLog;
-import com.mgtv.baseLib.http.base.BaseHttpParameter;
-import com.mgtv.baseLib.http.base.HttpCallBack;
-import com.mgtv.baseLib.http.base.XHttp;
+import com.mgtv.baseLib.https.base.BaseHttpParameter;
+import com.mgtv.baseLib.https.base.HttpCallBack;
+import com.mgtv.baseLib.https.base.XHttp;
 import com.mgtv.baseLib.image.base.LoaderResultCallBack;
 import com.mgtv.baseLib.image.base.XImageLoader;
 import com.mgtv.demo.httptest.ConfigBean;

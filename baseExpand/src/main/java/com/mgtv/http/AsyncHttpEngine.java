@@ -6,9 +6,9 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
-import com.mgtv.baseLib.http.base.HttpCallBack;
-import com.mgtv.baseLib.http.base.IHttpEngine;
-import com.mgtv.baseLib.http.base.XHttp;
+import com.mgtv.baseLib.https.base.HttpCallBack;
+import com.mgtv.baseLib.https.base.IHttpEngine;
+import com.mgtv.baseLib.https.base.XHttp;
 
 import java.util.Map;
 

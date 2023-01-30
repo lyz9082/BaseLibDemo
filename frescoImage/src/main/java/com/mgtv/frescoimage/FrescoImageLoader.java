@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Animatable;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -43,6 +44,11 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  */
 @Keep
 public class FrescoImageLoader implements IImageLoaderEngine {
+
+    public FrescoImageLoader() {
+        Log.i("init","FrescoImageLoader");
+    }
+
     @Override
     public void init(Context appContext, ImageLoaderConfig config) {
         try {

@@ -3,9 +3,9 @@ package com.mgtv.baseLib.global.entrance;
 import android.app.Application;
 
 import com.mgtv.baseLib.global.application.AppContext;
-import com.mgtv.baseLib.http.base.IHttpEngine;
-import com.mgtv.baseLib.http.base.XHttp;
-import com.mgtv.baseLib.http.base.XHttpConfig;
+import com.mgtv.baseLib.https.base.IHttpEngine;
+import com.mgtv.baseLib.https.base.XHttp;
+import com.mgtv.baseLib.https.base.XHttpConfig;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.image.base.ImageLoaderConfig;
 import com.mgtv.baseLib.image.base.XImageLoader;
@@ -32,6 +32,7 @@ public class XInitManager {
 
             //日志
             XLog.init(xInnerBuildConfig.isOpenLog());
+
             //图片库
             IImageLoaderEngine imageLoaderEngine = xInnerBuildConfig.getImageLoaderEngine();
             if (imageLoaderEngine != null) {

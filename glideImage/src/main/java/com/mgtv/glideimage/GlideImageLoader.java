@@ -3,11 +3,14 @@ package com.mgtv.glideimage;
 import android.content.Context;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.RequestManager;
@@ -22,12 +25,17 @@ import com.bumptech.glide.request.target.Target;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.image.base.ImageLoaderConfig;
 import com.mgtv.baseLib.image.base.ImageLoaderOptions;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Keep
 public class GlideImageLoader implements IImageLoaderEngine {
-//    @SuppressLint("CheckResult")
+
+    public GlideImageLoader() {
+        Log.i("init", "GlideImageLoader");
+    }
+
     @Override
     public void showImage(@NonNull final ImageLoaderOptions options) {
         RequestOptions requestOptions = new RequestOptions();
@@ -52,7 +60,7 @@ public class GlideImageLoader implements IImageLoaderEngine {
 
         }
         if (options.getOnLoaderProgressCallback() != null && !TextUtils.isEmpty(options.getUrl())) {
-            DownLoadManager.addListener(options.getUrl(),options.getOnLoaderProgressCallback());
+            DownLoadManager.addListener(options.getUrl(), options.getOnLoaderProgressCallback());
         }
         if (options.isSkipMemoryCache()) {
             requestOptions.skipMemoryCache(true);
@@ -158,7 +166,7 @@ public class GlideImageLoader implements IImageLoaderEngine {
     }
 
     @Override
-    public void init(Context context , ImageLoaderConfig config) {
+    public void init(Context context, ImageLoaderConfig config) {
         // 暂时不做配置
 
     }

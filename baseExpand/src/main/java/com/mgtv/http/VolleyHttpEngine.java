@@ -14,9 +14,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.mgtv.baseLib.http.base.HttpCallBack;
-import com.mgtv.baseLib.http.base.IHttpEngine;
-import com.mgtv.baseLib.http.base.XHttp;
+import com.mgtv.baseLib.https.base.HttpCallBack;
+import com.mgtv.baseLib.https.base.IHttpEngine;
+import com.mgtv.baseLib.https.base.XHttp;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
 
 import java.io.UnsupportedEncodingException;

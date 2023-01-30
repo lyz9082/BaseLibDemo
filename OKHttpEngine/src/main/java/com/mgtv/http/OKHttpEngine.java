@@ -2,13 +2,14 @@ package com.mgtv.http;
 
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.Keep;
 
-import com.mgtv.baseLib.http.base.HttpCallBack;
-import com.mgtv.baseLib.http.base.IHttpEngine;
-import com.mgtv.baseLib.http.base.XHttp;
-import com.mgtv.baseLib.http.base.XHttpConfig;
+import com.mgtv.baseLib.https.base.HttpCallBack;
+import com.mgtv.baseLib.https.base.IHttpEngine;
+import com.mgtv.baseLib.https.base.XHttp;
+import com.mgtv.baseLib.https.base.XHttpConfig;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
 
 import java.io.File;
@@ -39,6 +40,7 @@ public class OKHttpEngine implements IHttpEngine {
     private int cacheSize = 10 * 1024 * 1024;
 
     public OKHttpEngine(Context context) {
+        Log.i("init","OKHttpEngine");
         client = new OkHttpClient().newBuilder()
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)

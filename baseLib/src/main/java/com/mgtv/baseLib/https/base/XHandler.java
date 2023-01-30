@@ -1,4 +1,4 @@
-package com.mgtv.baseLib.http.base;
+package com.mgtv.baseLib.https.base;
 
 import android.os.Handler;
 import android.os.Looper;

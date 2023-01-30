@@ -4,13 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.mgtv.baseLib.global.application.AppContext;
-import com.mgtv.baseLib.http.base.IHttpEngine;
+import com.mgtv.baseLib.https.base.IHttpEngine;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
+import com.mgtv.baseLib.reflect.ReflectConstant;
+import com.mgtv.baseLib.reflect.ReflectUtil;
 import com.mgtv.frescoimage.FrescoImageLoader;
 import com.mgtv.glideimage.GlideImageLoader;
-import com.mgtv.http.AsyncHttpEngine;
-import com.mgtv.http.OKHttpEngine;
-import com.mgtv.http.VolleyHttpEngine;
 
 /**
  * @author 龙奕志
@@ -53,11 +52,14 @@ public class XInnerBuildConfig {
         public XInnerBuildConfig.Builder setHttpEngine(@NonNull LoaderType.HttpLoaderType httpLoaderType) {
             if (httpLoaderType != null) {
                 if (httpLoaderType == LoaderType.HttpLoaderType.VOLLEY) {
-                    httpEngine = new VolleyHttpEngine(AppContext.getContext());
+//                    httpEngine = new VolleyHttpEngine(AppContext.getContext());
+                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.VolleyHttpEngine);
                 } else if (httpLoaderType == LoaderType.HttpLoaderType.ASYNC) {
-                    httpEngine = new AsyncHttpEngine();
+//                    httpEngine = new AsyncHttpEngine(AppContext.getContext());
+                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.AsyncHttpEngine);
                 } else {
-                    httpEngine = new OKHttpEngine(AppContext.getContext().getCacheDir());
+//                    httpEngine = new OKHttpEngine(AppContext.getContext());
+                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.OKHttpEngine);
                 }
             }
             return this;
