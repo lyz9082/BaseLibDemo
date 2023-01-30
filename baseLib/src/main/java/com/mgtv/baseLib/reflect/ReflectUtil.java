@@ -2,7 +2,6 @@ package com.mgtv.baseLib.reflect;
 
 import android.content.Context;
 import android.text.TextUtils;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -37,7 +36,27 @@ public class ReflectUtil {
         return null;
     }
 
-    public static void obtainObject() {
-
+    public static Object obtainObject(String className) {
+        if (!TextUtils.isEmpty(className)) {
+            Class cl = null;
+            try {
+                cl = Class.forName(className);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            try {
+                Constructor constructor = cl.getConstructor();
+                Object obj = null;
+                try {
+                    obj = constructor.newInstance();
+                } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+                return obj;
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }

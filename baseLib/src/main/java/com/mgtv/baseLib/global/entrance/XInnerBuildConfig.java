@@ -8,7 +8,6 @@ import com.mgtv.baseLib.https.base.IHttpEngine;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.reflect.ReflectConstant;
 import com.mgtv.baseLib.reflect.ReflectUtil;
-import com.mgtv.frescoimage.FrescoImageLoader;
 import com.mgtv.glideimage.GlideImageLoader;
 
 /**
@@ -68,9 +67,13 @@ public class XInnerBuildConfig {
         public XInnerBuildConfig.Builder setImageLoaderEngine(@NonNull LoaderType.ImageLoaderType imageLoaderType) {
             if (imageLoaderType != null) {
                 if (imageLoaderType == LoaderType.ImageLoaderType.FRESCO) {
-                    imageLoaderEngine = new FrescoImageLoader();
+                    imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
+                            (ReflectConstant.FrescoImageLoader);
+//                    imageLoaderEngine = new FrescoImageLoader();
                 } else {
-                    imageLoaderEngine = new GlideImageLoader();
+                    imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
+                            (ReflectConstant.GlideImageLoader);
+//                    imageLoaderEngine = new GlideImageLoader();
                 }
             }
             return this;
