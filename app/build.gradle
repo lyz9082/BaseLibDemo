@@ -64,6 +64,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -71,7 +72,6 @@ dependencies {
 //    implementation project(path: ':baseLib')
     implementation(fileTree("libs"))
     implementation 'androidx.annotation:annotation:1.1.0'
-
     //解析
     implementation 'com.google.code.gson:gson:2.6.2'
     //可选
@@ -86,7 +86,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     implementation "com.github.bumptech.glide:okhttp3-integration:4.7.1"
     //网络框架，目前就列举这3种常用的
-//    compile 'com.mcxiaoke.volley:library:1.0.19'
-    compile 'com.squareup.okhttp3:okhttp:3.8.0'
-//    compile 'com.loopj.android:android-async-http:1.4.9'
+//    implementation 'com.mcxiaoke.volley:library:1.0.19'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+//    implementation 'com.loopj.android:android-async-http:1.4.9'
 }

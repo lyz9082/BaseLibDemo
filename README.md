@@ -37,6 +37,15 @@ XImageLoader.getInstance().showImage(XImageLoader.getDefaultOptions(imageView, i
                 XLog.d(error);
             }
         });
+//问题记录        
+https://blog.csdn.net/lhy349/article/details/79727897       
+3.混淆没有添加添加导致Crash
+
+在引入Glide的时候，如果使用了混淆，而没有配置相应的Glide混淆内容，会导致java.lang.IllegalArgumentException: Unable to find GlideModule to find GlideModule implementation异常 
+解决方法是添加混淆文件，同时需要注意的是，如果单独配置了GlideModule，实现了GlideModule接口的类不能混淆，因为manifest中指明了包名+类名的，混淆了就找不到了
+
+#Glide其他混淆信息 …
+-keep public class * implements  com.bumptech.glide.module.GlideModule
 
 
 
