@@ -42,15 +42,21 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
 
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //lib必须库
     implementation 'androidx.annotation:annotation:1.1.0'
-    api files('libs/baseExpand.jar')
     //解析
     implementation 'com.google.code.gson:gson:2.6.2'
+    //可选配合配置远程依赖
+    implementation files('libs/AsyncHttpEngine.jar')
+    implementation files('libs/frescoImage.jar')
+    implementation files('libs/glideImage.jar')
+    implementation files('libs/OKHttpEngine.jar')
+    implementation files('libs/VolleyHttpEngine.jar')
 }
 
 //版本发布指令 start

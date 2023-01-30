@@ -6,11 +6,11 @@ import androidx.annotation.Nullable;
 import com.mgtv.baseLib.global.application.AppContext;
 import com.mgtv.baseLib.http.base.IHttpEngine;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
+import com.mgtv.frescoimage.FrescoImageLoader;
+import com.mgtv.glideimage.GlideImageLoader;
 import com.mgtv.http.AsyncHttpEngine;
 import com.mgtv.http.OKHttpEngine;
 import com.mgtv.http.VolleyHttpEngine;
-import com.mgtv.image.frescoimage.FrescoImageLoader;
-import com.mgtv.image.glideimage.GlideImageLoader;
 
 /**
  * @author 龙奕志
