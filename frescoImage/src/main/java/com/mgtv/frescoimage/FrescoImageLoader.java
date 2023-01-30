@@ -34,8 +34,6 @@ import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.image.base.ImageLoaderConfig;
 import com.mgtv.baseLib.image.base.ImageLoaderOptions;
 import com.mgtv.baseLib.image.base.LoaderResultCallBack;
-import com.mgtv.image.frescoimage.BitmapMemoryCacheParamsSupplier;
-
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 

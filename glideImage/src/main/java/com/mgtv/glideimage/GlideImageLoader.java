@@ -22,9 +22,6 @@ import com.bumptech.glide.request.target.Target;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.image.base.ImageLoaderConfig;
 import com.mgtv.baseLib.image.base.ImageLoaderOptions;
-import com.mgtv.image.glideimage.BlurTransformation;
-import com.mgtv.image.glideimage.CircleTransformation;
-
 import java.util.ArrayList;
 import java.util.List;
 
