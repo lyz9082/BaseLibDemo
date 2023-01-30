@@ -68,9 +68,13 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
 
-    implementation project(path: ':baseLib')
-//    implementation(fileTree("libs"))
+    if (project.properties.'devlepModel' == 'true') {
+        implementation project(path: ':baseLib')
+    } else {
+        implementation files("libs/baseLib-230130.aar")
+    }
 
 
     implementation 'androidx.annotation:annotation:1.1.0'

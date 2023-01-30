@@ -9,11 +9,11 @@ import androidx.annotation.Keep;
  */
 @Keep
 public class LoaderType {
-
+    @Keep
     public enum HttpLoaderType {
         OKHTTP,VOLLEY,ASYNC
     }
-
+    @Keep
     public enum ImageLoaderType {
         GLIDE,FRESCO
     }

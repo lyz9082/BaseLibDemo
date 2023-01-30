@@ -59,3 +59,8 @@
 # 图片加载
 -dontwarn com.bumptech.glide.**
 -keep class com.bumptech.glide.** {*;}
+
+
+#okhttp
+-dontwarn okhttp3.**
+-keep class okhttp3.**{*;}

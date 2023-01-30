@@ -12,6 +12,8 @@ package com.mgtv.baseLib.klog;
  */
 
 import android.text.TextUtils;
+
+import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
 import com.mgtv.baseLib.klog.BaseLog;
 import com.mgtv.baseLib.klog.FileLog;
@@ -39,6 +41,7 @@ import java.io.StringWriter;
  *         16/6/15  扩展功能，添加不能关闭的KLog.debug(),用于发布版本的Log打印,优化部分代码
  *         16/6/20  扩展功能，添加堆栈跟踪功能KLog.trace()
  */
+@Keep
 public final class XLog {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");

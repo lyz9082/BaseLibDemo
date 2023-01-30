@@ -42,3 +42,8 @@
 -keep class com.bumptech.glide.** {*;}
 #glide混淆配置 end---------------------------------------
 
+#okhttp混淆配置 start---------------------------------------
+#okhttp
+-dontwarn okhttp3.**
+-keep class okhttp3.**{*;}
+#okhttp混淆配置 start---------------------------------------

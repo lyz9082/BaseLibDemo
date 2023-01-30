@@ -23,7 +23,7 @@ public class XBuildConfig {
         this.imageLoaderType = builder.imageLoaderType;
         this.mOpenLog = builder.isOpenLog;
     }
-
+    @Keep
     public final static class Builder {
         private LoaderType.HttpLoaderType httpLoaderType;
         private LoaderType.ImageLoaderType imageLoaderType;
