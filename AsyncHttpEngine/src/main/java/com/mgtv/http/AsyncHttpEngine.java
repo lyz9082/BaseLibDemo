@@ -1,5 +1,7 @@
 package com.mgtv.http;
 
+import android.content.Context;
+
 import androidx.annotation.Keep;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -22,7 +24,7 @@ import cz.msebera.android.httpclient.Header;
 public class AsyncHttpEngine implements IHttpEngine {
     private AsyncHttpClient client;
 
-    public AsyncHttpEngine() {
+    public AsyncHttpEngine(Context context) {
         client = new AsyncHttpClient();
     }
 

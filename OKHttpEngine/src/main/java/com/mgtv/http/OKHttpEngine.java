@@ -1,6 +1,8 @@
 package com.mgtv.http;
 
 
+import android.content.Context;
+
 import androidx.annotation.Keep;
 
 import com.mgtv.baseLib.http.base.HttpCallBack;
@@ -36,13 +38,12 @@ public class OKHttpEngine implements IHttpEngine {
     private OkHttpClient client = null;
     private int cacheSize = 10 * 1024 * 1024;
 
-    public OKHttpEngine(File filePath) {
+    public OKHttpEngine(Context context) {
         client = new OkHttpClient().newBuilder()
                 .retryOnConnectionFailure(true)
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
-                .cache(new Cache(filePath, cacheSize))
                 .build();
     }
 

@@ -5,6 +5,7 @@ import android.app.Application;
 import com.mgtv.baseLib.global.application.AppContext;
 import com.mgtv.baseLib.http.base.IHttpEngine;
 import com.mgtv.baseLib.http.base.XHttp;
+import com.mgtv.baseLib.http.base.XHttpConfig;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.image.base.ImageLoaderConfig;
 import com.mgtv.baseLib.image.base.XImageLoader;
@@ -43,7 +44,12 @@ public class XInitManager {
 
             //网络库
             IHttpEngine iHttpEngine = xInnerBuildConfig.getHttpEngine();
+            XHttpConfig xHttpConfig = new XHttpConfig.Builder()
+                    .setCacheFilePath(AppContext.getContext().getCacheDir().getAbsolutePath())
+                    .setTimeout(10).build();//可以继续往外暴露
+
             if (iHttpEngine != null) {
+                iHttpEngine.setConfig(xHttpConfig);
                 XHttp.init(iHttpEngine);
             }
         }
