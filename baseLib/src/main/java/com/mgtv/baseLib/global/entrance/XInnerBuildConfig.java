@@ -49,6 +49,7 @@ public class XInnerBuildConfig {
         private IImageLoaderEngine imageLoaderEngine;
         private boolean isOpenLog;
 
+        //通过反射加载类，实现动态配置
         public XInnerBuildConfig.Builder setHttpEngine(@NonNull LoaderType.HttpLoaderType httpLoaderType) {
             if (httpLoaderType != null) {
                 if (httpLoaderType == LoaderType.HttpLoaderType.VOLLEY) {

@@ -51,6 +51,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     //解析
     implementation 'com.google.code.gson:gson:2.6.2'
+
     //可选配合配置远程依赖
     implementation files('libs/AsyncHttpEngine.jar')
     implementation files('libs/frescoImage.jar')

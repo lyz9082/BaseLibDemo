@@ -58,4 +58,13 @@ public class XHttp implements IHttpEngine {
             }
         }
     }
+
+    @Override
+    public void setConfig(XHttpConfig xHttpConfig) {
+        try {
+            httpEngine.setConfig(xHttpConfig);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

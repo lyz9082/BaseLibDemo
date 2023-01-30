@@ -6,6 +6,7 @@ import androidx.annotation.Keep;
 import com.mgtv.baseLib.http.base.HttpCallBack;
 import com.mgtv.baseLib.http.base.IHttpEngine;
 import com.mgtv.baseLib.http.base.XHttp;
+import com.mgtv.baseLib.http.base.XHttpConfig;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
 
 import java.io.File;
@@ -137,6 +138,20 @@ public class OKHttpEngine implements IHttpEngine {
                 }
             }
         });
+    }
+
+    @Override
+    public void setConfig(XHttpConfig xHttpConfig) {
+        if (xHttpConfig != null && client != null) {
+            client = new OkHttpClient().newBuilder()
+                    .retryOnConnectionFailure(true)
+                    .connectTimeout(xHttpConfig.getTimeout(), TimeUnit.SECONDS)
+                    .readTimeout(xHttpConfig.getTimeout(), TimeUnit.SECONDS)
+                    .writeTimeout(xHttpConfig.getTimeout(), TimeUnit.SECONDS)
+                    .cache(new Cache(new File(xHttpConfig.getCacheFilePath()), cacheSize))
+                    .build();
+        }
+
     }
 
     private String getUrlParamsByMap(Map<String, Object> map) {

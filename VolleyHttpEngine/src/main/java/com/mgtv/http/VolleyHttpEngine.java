@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.mgtv.baseLib.http.base.HttpCallBack;
 import com.mgtv.baseLib.http.base.IHttpEngine;
 import com.mgtv.baseLib.http.base.XHttp;
+import com.mgtv.baseLib.http.base.XHttpConfig;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -113,5 +114,10 @@ public class VolleyHttpEngine implements IHttpEngine {
             }
         };
         mQueue.add(request);
+    }
+
+    @Override
+    public void setConfig(XHttpConfig xHttpConfig) {
+
     }
 }

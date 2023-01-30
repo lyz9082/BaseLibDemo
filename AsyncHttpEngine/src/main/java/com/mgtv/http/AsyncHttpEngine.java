@@ -5,6 +5,7 @@ import androidx.annotation.Keep;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.mgtv.baseLib.http.base.XHttpConfig;
 import com.mgtv.baseLib.jsonparse.JsonUtils;
 import com.mgtv.baseLib.http.base.HttpCallBack;
 import com.mgtv.baseLib.http.base.IHttpEngine;
@@ -72,5 +73,10 @@ public class AsyncHttpEngine implements IHttpEngine {
                 callBack.onFailed(error.toString());
             }
         });
+    }
+
+    @Override
+    public void setConfig(XHttpConfig xHttpConfig) {
+
     }
 }
