@@ -1,5 +1,8 @@
 package com.mgtv.baseLib.image.base;
 
+import androidx.annotation.Keep;
+
+@Keep
 public interface OnLoaderProgressCallback {
     /**
      *

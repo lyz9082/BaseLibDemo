@@ -1,9 +1,11 @@
 package com.mgtv.baseLib.https.base;
 
+import androidx.annotation.Keep;
+
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
-
+@Keep
 public class XHttp implements IHttpEngine {
 
     private static IHttpEngine httpEngine;

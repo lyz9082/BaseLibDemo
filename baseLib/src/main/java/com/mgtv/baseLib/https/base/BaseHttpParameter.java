@@ -2,6 +2,8 @@ package com.mgtv.baseLib.https.base;
 
 import android.text.TextUtils;
 
+import androidx.annotation.Keep;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -13,6 +15,7 @@ import java.util.Map;
  * 创建日期：2023/1/28  4:41 PM
  * BaseParameter描述：
  */
+@Keep
 public class BaseHttpParameter extends HashMap<String, String> {
     private String mParamString;
 

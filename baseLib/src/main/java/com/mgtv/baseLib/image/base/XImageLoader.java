@@ -3,13 +3,14 @@ package com.mgtv.baseLib.image.base;
 import android.content.Context;
 import android.view.View;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
 
 /**
  * Created by Administrator on 2017/3/22 0022.
  */
-
+@Keep
 public class XImageLoader {
     private static final XImageLoader INSTANCE = new XImageLoader();
     private IImageLoaderEngine imageLoaderStrategy;
