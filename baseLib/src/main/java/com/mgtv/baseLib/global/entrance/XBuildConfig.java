@@ -1,7 +1,6 @@
 package com.mgtv.baseLib.global.entrance;
 
-import com.mgtv.baseLib.http.base.IHttpEngine;
-import com.mgtv.baseLib.image.base.IImageLoaderStrategy;
+import androidx.annotation.NonNull;
 
 /**
  * @author 龙奕志
@@ -9,28 +8,32 @@ import com.mgtv.baseLib.image.base.IImageLoaderStrategy;
  * LibBuildConfig描述：初始化配置信息
  */
 public class XBuildConfig {
+
     private boolean mOpenLog;//设置日志是否打开
-    private IHttpEngine mHttpEngine;//设置请求框架
-    private IImageLoaderStrategy mImageLoaderStrategy;//设置图片框架
+    @NonNull
+    private LoaderType.HttpLoaderType httpLoaderType;
+    @NonNull
+    private LoaderType.ImageLoaderType imageLoaderType;
+
 
     public XBuildConfig(Builder builder) {
-        this.mHttpEngine = builder.httpEngine;
-        this.mImageLoaderStrategy = builder.imageLoaderStrategy;
+        this.httpLoaderType = builder.httpLoaderType;
+        this.imageLoaderType = builder.imageLoaderType;
         this.mOpenLog = builder.isOpenLog;
     }
 
     public final static class Builder {
-        private IHttpEngine httpEngine;
-        private IImageLoaderStrategy imageLoaderStrategy;
+        private LoaderType.HttpLoaderType httpLoaderType;
+        private LoaderType.ImageLoaderType imageLoaderType;
         private boolean isOpenLog;
 
-        public Builder setHttpEngine(IHttpEngine httpEngine) {
-            this.httpEngine = httpEngine;
+        public Builder setHttpLoaderType(@NonNull LoaderType.HttpLoaderType httpLoaderType) {
+            this.httpLoaderType = httpLoaderType;
             return this;
         }
 
-        public Builder setImageLoaderStrategy(IImageLoaderStrategy imageLoaderStrategy) {
-            this.imageLoaderStrategy = imageLoaderStrategy;
+        public Builder setImageLoaderType(@NonNull LoaderType.ImageLoaderType imageLoaderType) {
+            this.imageLoaderType = imageLoaderType;
             return this;
         }
 
@@ -44,12 +47,12 @@ public class XBuildConfig {
         }
     }
 
-    public IHttpEngine getHttpEngine() {
-        return mHttpEngine;
+    public LoaderType.HttpLoaderType getLoaderType() {
+        return httpLoaderType;
     }
 
-    public IImageLoaderStrategy getImageLoaderStrategy() {
-        return mImageLoaderStrategy;
+    public LoaderType.ImageLoaderType getImageLoaderType() {
+        return imageLoaderType;
     }
 
     public boolean isOpenLog() {

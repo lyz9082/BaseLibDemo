@@ -5,8 +5,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import java.util.Map;
-
 
 /**
  * Created by Administrator on 2017/3/22 0022.
@@ -14,7 +12,7 @@ import java.util.Map;
 
 public class XImageLoader {
     private static final XImageLoader INSTANCE = new XImageLoader();
-    private IImageLoaderStrategy imageLoaderStrategy;
+    private IImageLoaderEngine imageLoaderStrategy;
 
     private XImageLoader() {
     }
@@ -67,7 +65,7 @@ public class XImageLoader {
         imageLoaderStrategy = config.getIImageLoaderStrategy();
     }
 
-    private IImageLoaderStrategy getLoaderStrategy() {
+    private IImageLoaderEngine getLoaderStrategy() {
         return imageLoaderStrategy;
     }
 

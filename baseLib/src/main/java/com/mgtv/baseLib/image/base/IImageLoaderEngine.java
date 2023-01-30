@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
  * Created by Administrator on 2017/3/20 0020.
  */
 
-public interface IImageLoaderStrategy {
+public interface IImageLoaderEngine {
     void showImage(@NonNull ImageLoaderOptions options);
     void hideImage(@NonNull View view,int visiable);
     void cleanMemory(Context context);

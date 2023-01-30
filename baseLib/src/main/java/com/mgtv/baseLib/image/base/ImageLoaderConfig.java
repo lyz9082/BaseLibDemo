@@ -1,7 +1,7 @@
 package com.mgtv.baseLib.image.base;
 
 public class ImageLoaderConfig {
-    private IImageLoaderStrategy imageLoaderStrategy;
+    private IImageLoaderEngine imageLoaderStrategy;
     private long maxMemory = 0;
 
     private ImageLoaderConfig(Builder builder) {
@@ -13,15 +13,15 @@ public class ImageLoaderConfig {
         return maxMemory <= 0 ? 40 * 1024 * 1024 : maxMemory;
     }
 
-    public IImageLoaderStrategy getIImageLoaderStrategy() {
+    public IImageLoaderEngine getIImageLoaderStrategy() {
         return imageLoaderStrategy;
     }
 
     public static class Builder {
-        private IImageLoaderStrategy imageLoaderStrategy;
+        private IImageLoaderEngine imageLoaderStrategy;
         private long maxMemory = 40 * 1024 * 1024;
 
-        public Builder(IImageLoaderStrategy loaderStrategy) {
+        public Builder(IImageLoaderEngine loaderStrategy) {
             imageLoaderStrategy = loaderStrategy;
         }
 
