@@ -9,6 +9,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
@@ -28,10 +30,11 @@ import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.mgtv.baseLib.R;
-import com.mgtv.baseLib.image.base.IImageLoaderStrategy;
+import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.image.base.ImageLoaderConfig;
 import com.mgtv.baseLib.image.base.ImageLoaderOptions;
 import com.mgtv.baseLib.image.base.LoaderResultCallBack;
+import com.mgtv.image.frescoimage.BitmapMemoryCacheParamsSupplier;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -40,8 +43,8 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 /**
  * Created by ${wuzhao} on 2017/10/18 0018.
  */
-
-public class FrescoImageLoader implements IImageLoaderStrategy {
+@Keep
+public class FrescoImageLoader implements IImageLoaderEngine {
     @Override
     public void init(Context appContext, ImageLoaderConfig config) {
         try {

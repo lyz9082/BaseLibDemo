@@ -1,6 +1,8 @@
 package com.mgtv.http;
 
 
+import androidx.annotation.Keep;
+
 import com.mgtv.baseLib.http.base.HttpCallBack;
 import com.mgtv.baseLib.http.base.IHttpEngine;
 import com.mgtv.baseLib.http.base.XHttp;
@@ -27,6 +29,7 @@ import static okhttp3.internal.Util.EMPTY_REQUEST;
 /**
  * OKHttp简单实现，你可修改，这只是案例
  */
+@Keep
 public class OKHttpEngine implements IHttpEngine {
 
     private OkHttpClient client = null;

@@ -2,6 +2,8 @@ package com.mgtv.glideimage;
 
 import android.text.TextUtils;
 import com.mgtv.baseLib.image.base.OnLoaderProgressCallback;
+import com.mgtv.image.glideimage.ProgressResponseBody;
+
 import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

@@ -1,3 +1,6 @@
+
+//通过各个子module中的makeJar生成不同依赖的网络和图片jar包，根据具体需求打包不同jar包进aar
+
 //image 模块实现无缝替换库
 - **打造统一的图片加载框架，融合Glide，Fresco，一套API兼容两种加载方式**
 https://github.com/ladingwu/ImageLoaderFramework
@@ -36,6 +39,5 @@ XImageLoader.getInstance().showImage(XImageLoader.getDefaultOptions(imageView, i
         });
 
 
-//通过各个子module中的makeJar生成不同依赖的jar包,也可统一生成一个jar（后期不通jar可以根据需要动态打包，减少包体积）
 
 

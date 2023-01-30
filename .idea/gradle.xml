@@ -11,9 +11,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AsyncHttpEngine" />
+            <option value="$PROJECT_DIR$/OKHttpEngine" />
+            <option value="$PROJECT_DIR$/VolleyHttpEngine" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/baseExpand" />
             <option value="$PROJECT_DIR$/baseLib" />
+            <option value="$PROJECT_DIR$/frescoImage" />
+            <option value="$PROJECT_DIR$/glideImage" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
