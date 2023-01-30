@@ -1,4 +1,4 @@
-package com.mgtv.http;
+package com.mgtv.okhttp;
 
 
 import android.content.Context;
