@@ -21,7 +21,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -39,10 +39,11 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
-    implementation project(path: ':baseLib')
+//    implementation project(path: ':baseLib')
+    implementation(fileTree("libs"))
 
-
-
+    //解析
+    implementation 'com.google.code.gson:gson:2.6.2'
     //可选
     //图片库 灵活选择
     //fresco

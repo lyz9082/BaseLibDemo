@@ -1,5 +1,7 @@
 package com.mgtv.demo.httptest;
 
+import androidx.annotation.Keep;
+
 import java.util.List;
 
 /**
@@ -7,6 +9,7 @@ import java.util.List;
  * 创建日期：2019-10-22  12:33
  * ConfigBean描述：
  */
+@Keep
 public class ConfigBean {
 
     /**
