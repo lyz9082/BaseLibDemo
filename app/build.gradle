@@ -19,16 +19,45 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    signingConfigs {
         debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file("likeke.keystore")
+            storePassword "likeke"
+            keyAlias "www.zlex.org"
+            keyPassword "likeke"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file("likeke.keystore")
+            storePassword "likeke"
+            keyAlias "www.zlex.org"
+            keyPassword "likeke"
+            v1SigningEnabled false
+            v2SigningEnabled false
         }
     }
+
+    buildTypes {
+
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            shrinkResources false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -41,6 +70,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
 //    implementation project(path: ':baseLib')
     implementation(fileTree("libs"))
+    implementation 'androidx.annotation:annotation:1.1.0'
 
     //解析
     implementation 'com.google.code.gson:gson:2.6.2'
