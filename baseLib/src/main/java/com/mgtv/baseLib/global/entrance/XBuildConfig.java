@@ -1,5 +1,6 @@
 package com.mgtv.baseLib.global.entrance;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
 /**
@@ -7,6 +8,7 @@ import androidx.annotation.NonNull;
  * 创建日期：2023/1/29  4:21 PM
  * LibBuildConfig描述：初始化配置信息
  */
+@Keep
 public class XBuildConfig {
 
     private boolean mOpenLog;//设置日志是否打开

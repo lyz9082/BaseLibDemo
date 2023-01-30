@@ -2,6 +2,8 @@ package com.mgtv.baseLib.global.entrance;
 
 import android.app.Application;
 
+import androidx.annotation.Keep;
+
 import com.mgtv.baseLib.global.application.AppContext;
 import com.mgtv.baseLib.https.base.IHttpEngine;
 import com.mgtv.baseLib.https.base.XHttp;
@@ -16,6 +18,7 @@ import com.mgtv.baseLib.klog.XLog;
  * 创建日期：2023/1/18  5:56 PM
  * InitManager描述：基础库初始化入口
  */
+@Keep
 public class XInitManager {
 
     public static void init(Application context, XBuildConfig buildConfig) {
