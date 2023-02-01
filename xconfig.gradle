@@ -1,0 +1,8 @@
+ext{
+    http = [
+            "httpEngine":"okhttp",//"okhttp","volley","async"
+    ]
+    image = [
+            "imageEngine": "glide",//"glide","fresco"
+    ]
+}

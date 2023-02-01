@@ -37,7 +37,9 @@ public class XInnerBuildConfig {
         return mOpenLog;
     }
 
-
+    /**
+     * 配合xconfig.gradle配置打包jar
+     */
     public final static class Builder {
         @Nullable
         private IHttpEngine httpEngine;
