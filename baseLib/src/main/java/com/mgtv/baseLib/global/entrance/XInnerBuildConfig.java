@@ -2,13 +2,11 @@ package com.mgtv.baseLib.global.entrance;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.mgtv.baseLib.global.application.AppContext;
 import com.mgtv.baseLib.https.base.IHttpEngine;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
 import com.mgtv.baseLib.reflect.ReflectConstant;
 import com.mgtv.baseLib.reflect.ReflectUtil;
-import com.mgtv.glideimage.GlideImageLoader;
 
 /**
  * @author 龙奕志

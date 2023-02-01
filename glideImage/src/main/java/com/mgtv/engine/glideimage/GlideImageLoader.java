@@ -1,4 +1,4 @@
-package com.mgtv.glideimage;
+package com.mgtv.engine.glideimage;
 
 import android.content.Context;
 import android.os.Looper;

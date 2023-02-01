@@ -1,4 +1,4 @@
-package com.mgtv.glideimage;//package com.mgtv.mylibrary.image.impl.glidelibrary;
+package com.mgtv.engine.glideimage;//package com.mgtv.mylibrary.image.impl.glidelibrary;
 //
 //import android.content.Context;
 //import androidx.annotation.NonNull;

@@ -6,9 +6,9 @@ package com.mgtv.baseLib.reflect;
  * ReflectConstant描述：保存用来反射的类名
  */
 public class ReflectConstant {
-    public static final String VolleyHttpEngine="com.mgtv.volley.VolleyHttpEngine";
-    public static final String AsyncHttpEngine="com.mgtv.async.AsyncHttpEngine";
-    public static final String OKHttpEngine="com.mgtv.okhttp.OKHttpEngine";
-    public static final String FrescoImageLoader="com.mgtv.frescoimage.FrescoImageLoader";
-    public static final String GlideImageLoader="com.mgtv.glideimage.GlideImageLoader";
+    public static final String VolleyHttpEngine="com.mgtv.engine.volley.VolleyHttpEngine";
+    public static final String AsyncHttpEngine="com.mgtv.engine.async.AsyncHttpEngine";
+    public static final String OKHttpEngine="com.mgtv.engine.okhttp.OKHttpEngine";
+    public static final String FrescoImageLoader="com.mgtv.engine.frescoimage.FrescoImageLoader";
+    public static final String GlideImageLoader="com.mgtv.engine.glideimage.GlideImageLoader";
 }

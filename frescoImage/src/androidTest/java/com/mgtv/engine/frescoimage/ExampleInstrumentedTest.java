@@ -1,4 +1,4 @@
-package com.mgtv.frescoimage;
+package com.mgtv.engine.frescoimage;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.mgtv.frescoimage.test", appContext.getPackageName());
+        assertEquals("com.mgtv.engine.frescoimage.test", appContext.getPackageName());
     }
 }

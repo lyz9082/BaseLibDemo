@@ -1,4 +1,4 @@
-package com.mgtv.frescoimage;
+package com.mgtv.engine.frescoimage;
 
 import org.junit.Test;
 

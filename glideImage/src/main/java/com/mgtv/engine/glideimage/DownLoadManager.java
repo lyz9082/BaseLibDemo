@@ -1,4 +1,4 @@
-package com.mgtv.glideimage;
+package com.mgtv.engine.glideimage;
 
 import android.text.TextUtils;
 import com.mgtv.baseLib.image.base.OnLoaderProgressCallback;

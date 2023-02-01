@@ -1,4 +1,4 @@
-package com.mgtv.glideimage;
+package com.mgtv.engine.glideimage;
 
 import android.graphics.Bitmap;
 import androidx.annotation.NonNull;
