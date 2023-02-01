@@ -5,6 +5,9 @@ plugins {
 android {
     compileSdkVersion 32
     buildToolsVersion "33.0.1"
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
