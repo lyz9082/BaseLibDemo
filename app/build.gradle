@@ -73,7 +73,7 @@ dependencies {
     if (project.properties.'devlepModel' == 'true') {
         implementation project(path: ':baseLib')
     } else {
-        implementation files("libs/baseLib-230130.aar")
+        implementation files("libs/baseLib-230201.aar")
     }
 
 

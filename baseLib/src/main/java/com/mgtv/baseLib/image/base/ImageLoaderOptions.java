@@ -129,10 +129,6 @@ public class ImageLoaderOptions {
     public static Builder createImageOptions(@NonNull View v, @NonNull int resource){
         return new Builder(v, resource);
     }
-    public void show(){
-        XImageLoader.getInstance().showImage(this);
-    }
-
 
     public final static  class Builder{
 
