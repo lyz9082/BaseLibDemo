@@ -68,11 +68,11 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
-    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
 
     if (project.properties.'devlepModel' == 'true') {
         implementation project(path: ':baseLib')
     } else {
+        implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
         implementation files("libs/baseLib-230201.aar")
     }
 

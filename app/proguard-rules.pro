@@ -64,3 +64,5 @@
 #okhttp
 -dontwarn okhttp3.**
 -keep class okhttp3.**{*;}
+-keep class com.mgtv.okhttp.**{*;}
+-keep class com.mgtv.glideimage.**{*;}

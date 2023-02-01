@@ -46,6 +46,8 @@
 #okhttp
 -dontwarn okhttp3.**
 -keep class okhttp3.**{*;}
-#okhttp混淆配置 start---------------------------------------
--keep class com.mgtv.okhttp.**{*;}
--keep class com.mgtv.glideimage.**{*;}
+#okhttp混淆配置 end---------------------------------------
+
+#baselib混淆配置 start---------------------------------------
+-keep class com.mgtv.engine.**{*;}
+#baselib混淆配置 end---------------------------------------
