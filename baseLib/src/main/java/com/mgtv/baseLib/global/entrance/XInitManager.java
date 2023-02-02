@@ -29,8 +29,8 @@ public class XInitManager {
         if (buildConfig != null) {
             //重新赋值配置信息
             XInnerBuildConfig xInnerBuildConfig = new XInnerBuildConfig.Builder()
-                    .setHttpEngine(buildConfig.getLoaderType())
-                    .setImageLoaderEngine(buildConfig.getImageLoaderType())
+//                    .setHttpEngine(buildConfig.getLoaderType())
+//                    .setImageLoaderEngine(buildConfig.getImageLoaderType())
                     .openLog(buildConfig.isOpenLog()).build();
 
             //日志

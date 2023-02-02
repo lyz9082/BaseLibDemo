@@ -2,6 +2,8 @@ package com.mgtv.baseLib.global.entrance;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.mgtv.baseLib.BuildConfig;
 import com.mgtv.baseLib.global.application.AppContext;
 import com.mgtv.baseLib.https.base.IHttpEngine;
 import com.mgtv.baseLib.image.base.IImageLoaderEngine;
@@ -18,10 +20,18 @@ public class XInnerBuildConfig {
     private boolean mOpenLog;//设置日志是否打开
     private IHttpEngine mHttpEngine;//设置请求框架
     private IImageLoaderEngine iImageLoaderEngine;//设置图片框架
+    public static final String GLIDE = "glide";
+    public static final String FRESCO = "fresco";
+    public static final String OKHTTP = "okhttp";
+    public static final String ASYNC = "async";
+    public static final String VOLLEY = "volley";
+
 
     public XInnerBuildConfig(XInnerBuildConfig.Builder builder) {
-        this.mHttpEngine = builder.httpEngine;
-        this.iImageLoaderEngine = builder.imageLoaderEngine;
+//        this.mHttpEngine = builder.httpEngine;
+//        this.iImageLoaderEngine = builder.imageLoaderEngine;
+        this.mHttpEngine = obtainHttpEngine();
+        this.iImageLoaderEngine =obtainImageEngine();
         this.mOpenLog = builder.isOpenLog;
     }
 
@@ -35,6 +45,31 @@ public class XInnerBuildConfig {
 
     public boolean isOpenLog() {
         return mOpenLog;
+    }
+
+
+    private IHttpEngine obtainHttpEngine() {
+        IHttpEngine httpEngine;
+        if (VOLLEY.equalsIgnoreCase(BuildConfig.httpEngine)) {
+            httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.VolleyHttpEngine);
+        } else if (ASYNC.equalsIgnoreCase(BuildConfig.httpEngine)) {
+            httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.AsyncHttpEngine);
+        } else {
+            httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.OKHttpEngine);
+        }
+        return httpEngine;
+    }
+
+    private IImageLoaderEngine obtainImageEngine() {
+        IImageLoaderEngine imageLoaderEngine;
+        if (FRESCO.equalsIgnoreCase(BuildConfig.imageEngine)) {
+            imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
+                    (ReflectConstant.FrescoImageLoader);
+        } else {
+            imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
+                    (ReflectConstant.GlideImageLoader);
+        }
+        return imageLoaderEngine;
     }
 
     /**
@@ -51,13 +86,10 @@ public class XInnerBuildConfig {
         public XInnerBuildConfig.Builder setHttpEngine(@NonNull LoaderType.HttpLoaderType httpLoaderType) {
             if (httpLoaderType != null) {
                 if (httpLoaderType == LoaderType.HttpLoaderType.VOLLEY) {
-//                    httpEngine = new VolleyHttpEngine(AppContext.getContext());
                     httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.VolleyHttpEngine);
                 } else if (httpLoaderType == LoaderType.HttpLoaderType.ASYNC) {
-//                    httpEngine = new AsyncHttpEngine(AppContext.getContext());
                     httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.AsyncHttpEngine);
                 } else {
-//                    httpEngine = new OKHttpEngine(AppContext.getContext());
                     httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.OKHttpEngine);
                 }
             }
@@ -69,11 +101,9 @@ public class XInnerBuildConfig {
                 if (imageLoaderType == LoaderType.ImageLoaderType.FRESCO) {
                     imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
                             (ReflectConstant.FrescoImageLoader);
-//                    imageLoaderEngine = new FrescoImageLoader();
                 } else {
                     imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
                             (ReflectConstant.GlideImageLoader);
-//                    imageLoaderEngine = new GlideImageLoader();
                 }
             }
             return this;

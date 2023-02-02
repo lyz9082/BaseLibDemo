@@ -14,8 +14,8 @@ public class MainApplication extends Application {
         super.onCreate();
         application = this;
         XBuildConfig xBuildConfig = new XBuildConfig.Builder()
-                .setHttpLoaderType(LoaderType.HttpLoaderType.OKHTTP)
-                .setImageLoaderType(LoaderType.ImageLoaderType.GLIDE)
+//                .setHttpLoaderType(LoaderType.HttpLoaderType.OKHTTP)
+//                .setImageLoaderType(LoaderType.ImageLoaderType.GLIDE)
                 .openLog(true).build();
 
         XInitManager.init(this, xBuildConfig);

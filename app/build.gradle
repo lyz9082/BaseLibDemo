@@ -73,7 +73,7 @@ dependencies {
         implementation project(path: ':baseLib')
     } else {
         implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
-        implementation files("libs/baseLib-230201.aar")
+        implementation files("libs/baseLib-230202.aar")
     }
 
 
