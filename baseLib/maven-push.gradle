@@ -6,6 +6,7 @@ afterEvaluate { project ->
                 pom.groupId = GROUP
                 pom.artifactId = POM_ARTIFACT_ID
                 pom.version = VERSION_NAME
+                pom.packaging = POM_PACKAGING
                 repository(url: uri("${rootProject.projectDir}/repo"))
 //                repository(url: getReleaseRepositoryUrl()) {
 //                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
@@ -13,10 +14,6 @@ afterEvaluate { project ->
 //                snapshotRepository(url: getSnapshotRepositoryUrl()) {
 //                    authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
 //                }
-
-                pom.project {
-                    packaging POM_PACKAGING
-                }
             }
         }
     }
