@@ -76,38 +76,38 @@ public class XInnerBuildConfig {
      * 配合xconfig.gradle配置打包jar
      */
     public final static class Builder {
-        @Nullable
-        private IHttpEngine httpEngine;
-        @Nullable
-        private IImageLoaderEngine imageLoaderEngine;
+//        @Nullable
+//        private IHttpEngine httpEngine;
+//        @Nullable
+//        private IImageLoaderEngine imageLoaderEngine;
         private boolean isOpenLog;
 
         //通过反射加载类，实现动态配置
-        public XInnerBuildConfig.Builder setHttpEngine(@NonNull LoaderType.HttpLoaderType httpLoaderType) {
-            if (httpLoaderType != null) {
-                if (httpLoaderType == LoaderType.HttpLoaderType.VOLLEY) {
-                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.VolleyHttpEngine);
-                } else if (httpLoaderType == LoaderType.HttpLoaderType.ASYNC) {
-                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.AsyncHttpEngine);
-                } else {
-                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.OKHttpEngine);
-                }
-            }
-            return this;
-        }
-
-        public XInnerBuildConfig.Builder setImageLoaderEngine(@NonNull LoaderType.ImageLoaderType imageLoaderType) {
-            if (imageLoaderType != null) {
-                if (imageLoaderType == LoaderType.ImageLoaderType.FRESCO) {
-                    imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
-                            (ReflectConstant.FrescoImageLoader);
-                } else {
-                    imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
-                            (ReflectConstant.GlideImageLoader);
-                }
-            }
-            return this;
-        }
+//        public XInnerBuildConfig.Builder setHttpEngine(@NonNull LoaderType.HttpLoaderType httpLoaderType) {
+//            if (httpLoaderType != null) {
+//                if (httpLoaderType == LoaderType.HttpLoaderType.VOLLEY) {
+//                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.VolleyHttpEngine);
+//                } else if (httpLoaderType == LoaderType.HttpLoaderType.ASYNC) {
+//                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.AsyncHttpEngine);
+//                } else {
+//                    httpEngine = (IHttpEngine) ReflectUtil.obtainObject(AppContext.getContext(), ReflectConstant.OKHttpEngine);
+//                }
+//            }
+//            return this;
+//        }
+//
+//        public XInnerBuildConfig.Builder setImageLoaderEngine(@NonNull LoaderType.ImageLoaderType imageLoaderType) {
+//            if (imageLoaderType != null) {
+//                if (imageLoaderType == LoaderType.ImageLoaderType.FRESCO) {
+//                    imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
+//                            (ReflectConstant.FrescoImageLoader);
+//                } else {
+//                    imageLoaderEngine = (IImageLoaderEngine) ReflectUtil.obtainObject
+//                            (ReflectConstant.GlideImageLoader);
+//                }
+//            }
+//            return this;
+//        }
 
         public XInnerBuildConfig.Builder openLog(boolean isOpenLog) {
             this.isOpenLog = isOpenLog;
